@@ -22,8 +22,10 @@ export function ToDoList() {
       text: taskText,
       isCompleted: false,
     };
-    addTask(newTask);
-    setTasktext("");
+    if (taskText.trim() !== "") {
+      addTask(newTask);
+      setTasktext("");
+    }
   };
 
   const handleRemoveTask = (taskId: number) => {
